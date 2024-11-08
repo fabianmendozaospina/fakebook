@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Fabian Mendoza & Douglas Santiago">
+        <meta name="description" content="Fakebook">
+        <meta name="keywords" content="html, css, web, seo, web development">
+        <title>Fakebook</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+        <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="./assets/js/index.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container flexbox">
+                <div class="logo">  
+                    <a href="./index.html">Fakebook</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Friends</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Groups</a></li>
+                        <li><a href="#">My Adds</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="subscribers">
+                    <button class="profile"></button> 
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="center">
+                <div class="container">
+                    <!-- Modal -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <div class="user-info">
+                                <h1>Account Information</h1>
+                                <div class="profile-modal"></div>
+                                <p class="name"></p>
+                                <p class="username"></p>
+                                <p class="email"></p>
+                                <p class="pages"></p>
+                                <p class="groups"></p>
+                                <p class="can-monetize"></p>
+                            </div>  
+                        </div>
+                    </div>
+
+                   <!-- Form -->
+                    <div class="form-container">
+                        <form>
+                            <textarea class="input" placeholder="Hey there, what's new?" rows="4"></textarea>
+                            <div class="upload-post-btn-row">
+                                <div class="upload-image-info-container">
+                                    <label for="fileInput" class="upload-img-btn"><i class="fa-solid fa-image"></i></label>
+                                    <input type="file" id="fileInput" class="upload-img-btn" style="display: none">
+                                    <div class="upload-info">
+                                        <div class="file-name-display"></div>
+                                    </div>
+                                </div>
+                                <div class="post-btn">Post</div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Post -->
+                    <div class="all-posts">
+                        <div class="post-container">
+                            <div class="post-header">
+                                <div class="profile-container">
+                                    <div class="profile"></div>
+                                    <div class="user-name"><p></p></div>
+                                </div>
+                                <div class="date"><p></p></div>
+                            </div>
+                            <div class="post-text-with-img">
+                                <p></p>
+                            </div>
+                            <div class="post-img"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>            
+    </body>
+</html>
