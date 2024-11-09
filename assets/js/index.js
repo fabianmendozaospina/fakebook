@@ -7,7 +7,7 @@ const pagesObj = select('.pages');
 const groupsObj = select('.groups');
 const inputObj = select('.input'); 
 const postObj = select('.post-btn'); 
-const postsContainerObj = select('.all-posts');
+const postsContainerObj = select('.post-container');
 const uploadImageObj = select('.upload-img-btn');
 const canMonetizeObj = select('.can-monetize');
 const fileInputObj = getElement('fileInput');
@@ -93,7 +93,7 @@ function getElement(selector, scope = document) {
 function openModal() {
     const modal = getElement('modal-popup');
 
-    modal.style.display = 'flex';
+    modal.classList.add('show');
     fullNameObj.innerHTML = getItemProfile('Name', user.getInfo().name); 
     userNameObj.innerHTML = getItemProfile('Username', user.getInfo().userName);
     emailObj.innerHTML = getItemProfile('Email', user.getInfo().email);
@@ -108,7 +108,8 @@ function getItemProfile(label, value, isBool = false) {
 
 function closeModal() {
     const modal = getElement('modal-popup');
-    modal.style.display = 'none';
+
+    modal.classList.remove('show');
 }
 
 function createPost(input, file) {
@@ -126,12 +127,12 @@ function createPost(input, file) {
     const text = document.createElement('div');
     const image = document.createElement('div');
 
-    element.classList.add('post-container');
+    element.classList.add('post-item');
     header.classList.add('post-header');
     profileContainer.classList.add('profile-container');
     profile.classList.add('profile');
     userName.classList.add('user-name');
-    userName.innerHTML = '<p>John Smith</p>';
+    userName.innerHTML = `<p>${user.getInfo().name}</p>`;
     date.classList.add('date');
     date.innerHTML = `<p>${currentDate.toDateString()}</p>`;
     profileContainer.appendChild(profile);
@@ -147,7 +148,7 @@ function createPost(input, file) {
         const reader = new FileReader();
         reader.onload = function () {
             image.style.backgroundImage = `url('${reader.result}')`;
-            image.style.height = '615px'; 
+            image.style.height = '616px'; 
         };
         reader.readAsDataURL(file);
     } 
@@ -182,7 +183,13 @@ listen('DOMContentLoaded', document, function () {
 listen('click', window, function (event) {
     const modal = getElement('modal-popup');
     if (event.target === modal) {
-        modal.style.display = 'none';
+        closeModal();
+    }
+});
+
+listen('keydown', document, function (event) {
+    if (event.key === 'Escape') {
+        closeModal();
     }
 });
 

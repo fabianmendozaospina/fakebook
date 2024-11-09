@@ -5,6 +5,7 @@
 /* ------------------------------ */
  
 :root {
+    --app-width-input: 616px;
     --app-white: #fff;
     --app-dark-background: #292929;
     --app-blue-light: #3683ff;
@@ -105,14 +106,14 @@ header {
     border-radius: 5px;
  
    .input {
-    background-color:var(--app-dark-gray);
-    color: var(--app-white);
-    width: 615px;
-    height: 150px;
-    font-size:16px;
-    font-weight: 500;
-    text-align: left;
-    resize: none;
+        background-color:var(--app-dark-gray);
+        color: var(--app-white);
+        width: var(--app-width-input);
+        height: 150px;
+        font-size:15px;
+        font-weight: 300;
+        text-align: left;
+        resize: none;
     }
  
     .input::placeholder {
@@ -175,11 +176,11 @@ header {
 /*             Post               */
 /* ------------------------------ */
  
-.all-posts .post-container {
+.post-container .post-item {
     display: none;
 }
  
-.post-container {
+.post-item {
     width: 650px;
     text-align: left;
     background-color: var(--app-white);
@@ -200,21 +201,21 @@ header {
             gap: 15px;
        
             .user-name p {
-                font-size: 16px;
+                font-size: 19px;
                 font-weight: 600;
                 color: var(--app-dark-gray);
             }
         }
  
         .date p {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 400;
             color: var(--app-dark-gray);
         }
     }
  
     .post-text p{
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 500;
         color: var(--app-dark-gray);
         margin: 5px;
@@ -222,7 +223,7 @@ header {
 
     .post-img {
         width: 100%;
-        height: 615px;
+        height: var(app-width-input);
         border-radius: 5px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -245,7 +246,7 @@ header {
     align-items: center;
  
     .modal {
-        width: 400px;
+        width: 410px;
         border-radius: 5px;
         background: var(--app-white);
         padding: 20px;
@@ -275,4 +276,25 @@ header {
             margin-bottom: 30px;
         }
     }
+}
+
+#modal-popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+#modal-popup.show {
+    opacity: 1;
+    transform: scale(1); 
+    pointer-events: all;
 }
