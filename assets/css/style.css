@@ -16,12 +16,7 @@
 body {
     font-family: 'Poppins', 'Open Sans', sans-serif;
     background-color: var(--app-dark-background);
-    overflow:auto;
-    margin-bottom: 25px;
-}
- 
-main {
-    overflow: hidden;
+    overflow: auto;
 }
  
 .container {
@@ -185,7 +180,6 @@ header {
 }
  
 .post-container {
-   
     width: 650px;
     text-align: left;
     background-color: var(--app-white);
