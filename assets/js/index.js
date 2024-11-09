@@ -5,11 +5,11 @@ const userNameObj = select('.username');
 const emailObj = select('.email');
 const pagesObj = select('.pages');
 const groupsObj = select('.groups');
-const canMonetizeObj = select('.can-monetize');
 const inputObj = select('.input'); 
 const postObj = select('.post-btn'); 
 const postsContainerObj = select('.all-posts');
 const uploadImageObj = select('.upload-img-btn');
+const canMonetizeObj = select('.can-monetize');
 const fileInputObj = getElement('fileInput');
 const fileNameObj = select('.file-name');
 let postId = 1;
@@ -91,7 +91,7 @@ function getElement(selector, scope = document) {
 }
 
 function openModal() {
-    const modal = getElement('myModal');
+    const modal = getElement('modal-popup');
 
     modal.style.display = 'flex';
     fullNameObj.innerHTML = getItemProfile('Name', user.getInfo().name); 
@@ -107,7 +107,7 @@ function getItemProfile(label, value, isBool = false) {
 }
 
 function closeModal() {
-    const modal = getElement('myModal');
+    const modal = getElement('modal-popup');
     modal.style.display = 'none';
 }
 
@@ -138,7 +138,7 @@ function createPost(input, file) {
     profileContainer.appendChild(userName);
     header.appendChild(profileContainer);
     header.appendChild(date);
-    text.classList.add('post-text-with-img');
+    text.classList.add('post-text');
     text.innerHTML = `<p>${input}</p>`;
     image.classList.add('post-img');
     image.style.height = '0';
@@ -180,7 +180,7 @@ listen('DOMContentLoaded', document, function () {
 });
 
 listen('click', window, function (event) {
-    const modal = getElement('myModal');
+    const modal = getElement('modal-popup');
     if (event.target === modal) {
         modal.style.display = 'none';
     }

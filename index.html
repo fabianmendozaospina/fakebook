@@ -39,12 +39,10 @@
         <main>
             <div class="center">
                 <div class="container">
-                    <!-- Modal -->
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modal-popup" class="modal-container">
+                        <div class="modal">
                             <div class="user-info">
-                                <h1>Account Information</h1>
+                                <h1>Profile</h1>
                                 <div class="profile-modal"></div>
                                 <p class="name"></p>
                                 <p class="username"></p>
@@ -55,35 +53,31 @@
                             </div>  
                         </div>
                     </div>
-
-                   <!-- Form -->
-                    <div class="form-container">
+                    <div class="form-post">
                         <form>
                             <textarea class="input" placeholder="Hey there, what's new?" rows="4"></textarea>
-                            <div class="upload-post-btn-row">
-                                <div class="upload-image-info-container">
-                                    <label for="fileInput" class="upload-img-btn"><i class="fa-solid fa-image"></i></label>
-                                    <input type="file" id="fileInput" class="upload-img-btn" style="display: none">
-                                    <div class="upload-info">
-                                        <div class="file-name-display"></div>
-                                    </div>
+                            <div class="upload-post">
+                                <div class="upload-post-image">
+                                    <label for="fileInput" class="upload-post-btn"><i class="fa-solid fa-image"></i></label>
+                                    <input type="file" id="fileInput" class="upload-post-btn" style="display: none">
+                                    <div class="file-name"></div>
                                 </div>
                                 <div class="post-btn">Post</div>
                             </div>
                         </form>
                     </div>
-
-                    <!-- Post -->
                     <div class="all-posts">
                         <div class="post-container">
                             <div class="post-header">
                                 <div class="profile-container">
                                     <div class="profile"></div>
-                                    <div class="user-name"><p></p></div>
+                                    <div class="user-name">
+                                        <p></p>
+                                    </div>
                                 </div>
                                 <div class="date"><p></p></div>
                             </div>
-                            <div class="post-text-with-img">
+                            <div class="post-text">
                                 <p></p>
                             </div>
                             <div class="post-img"></div>
