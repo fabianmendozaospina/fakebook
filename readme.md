@@ -5,7 +5,7 @@ by popular social networking platforms. It enables users to create profiles,
 make posts, and upload images. The project was developed by Software Developer 
 students at the Manitoba Institute of Trades & Technology (MITT).
 
-Visit the website [here](!!!!!!!!!!!!!!!place website here!!!!!!!!!!)
+Visit the website [here](https://fabianmendozaospina.github.io/fakebook/)
 
 ![](./assets/img/readme1.png)
 
